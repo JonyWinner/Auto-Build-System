@@ -5,7 +5,7 @@
 void times(void);
 int main()
 {
-	char envi,sys,git,choose;
+	char envi,sys,git,choose,rec;
 	times();
 	printf("**************************************\n");
 	printf("*    欢迎使用auto rom build system   *\n");
@@ -13,11 +13,13 @@ int main()
 	printf("\n");
 	printf("**************************************\n");
 	printf("*A.一键编译  B.安装编译环境 C.配置git*\n");
-	printf("*D.退出                              *\n");
+	printf("*D.REC       E.退出                  *\n");
 	printf("**************************************\n");
 
 	printf("请选择：\n");
 	scanf("%c",&choose);
+	getchar();
+
 	switch(choose)
 	{
 		case 'A':
@@ -46,18 +48,18 @@ int main()
 			}
 			
 			printf("选择您要编译的系统：\n");
-			printf("A.pe B.peplus C.evo D.dotOS E.Arrow F.Crdroid");
+			printf("A.pe B.peplus C.evo D.dotOS E.Arrow F.Crdroid\n");
 			printf("请选择：(输入序号)\n");
 			scanf("%c",&sys);
 	
 			switch(sys)
 			{
-				case 'A' : system("./files/get_pe.sh"); break;
-				case 'B' : system("./files/get_pep.sh"); break;
-				case 'C' : system("./files/get_evo.sh"); break;
-				case 'D' : system("./files/get_dot.sh"); break;
-				case 'E' : system("./files/get_arrow.sh"); break;
-				case 'F' : system("./files/get_crdroid.sh"); break;
+				case 'A' : system("./files/rom/get_pe.sh"); break;
+				case 'B' : system("./files/rom/get_pep.sh"); break;
+				case 'C' : system("./files/rom/get_evo.sh"); break;
+				case 'D' : system("./files/rom/get_dot.sh"); break;
+				case 'E' : system("./files/rom/get_arrow.sh"); break;
+				case 'F' : system("./files/rom/get_crdroid.sh"); break;
 				default : printf("暂不支持编译此rom!\n"); break;
 			}
 	
@@ -75,6 +77,29 @@ int main()
 			break;
 
 		case 'D':
+			system("clear");
+			times();
+			printf("选择你要编译的rec:\n");
+			printf("A.twrp B.OrangeFox\n");
+			scanf("%c",&rec);
+
+			switch(rec)
+			{	
+				case 'A':
+					system("./files/rec/get_twrp.sh");
+					break;
+
+				case 'B':
+					system("./files/rec/get_ofx.sh");
+					break;
+
+				default:
+					printf("暂不支持编译此rec!\n");
+					break;
+			}
+
+
+		case 'E':
 			system("exit");
 			break;
 	}
