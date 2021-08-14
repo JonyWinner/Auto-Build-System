@@ -23,6 +23,8 @@ int main()
 	switch(choose)
 	{
 		case 'A':
+			system("clear");
+			times();
 			printf("你是否已经安装编译环境？(Y/N)\n");
 			scanf("%c",&envi);
 			getchar();
@@ -69,10 +71,14 @@ int main()
 			break;
 
 		case 'B':
+			system("clear");
+			times();
 			system("./files/envi.sh");
 			break;
 
 		case 'C':
+			system("clear");
+			times();
 			system("./files/config_git.sh");
 			break;
 
