@@ -13,6 +13,7 @@ int main()
 	printf("\n");
 	printf("**************************************\n");
 	printf("*A.一键编译  B.安装编译环境 C.配置git*\n");
+	printf("*D.退出                              *\n");
 	printf("**************************************\n");
 
 	printf("请选择：\n");
@@ -70,6 +71,10 @@ int main()
 
 		case 'C':
 			system("./files/config_git.sh");
+			break;
+
+		case 'D':
+			system("exit");
 			break;
 	}
 	
