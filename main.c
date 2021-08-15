@@ -50,7 +50,7 @@ int main()
 			}
 			
 			printf("选择您要编译的系统：\n");
-			printf("A.pe B.peplus C.evo D.dotOS E.Arrow F.Crdroid\n");
+			printf("A.pe B.peplus C.evo D.dotOS E.Arrow F.Crdroid G.Havoc\n");
 			printf("请选择：(输入序号)\n");
 			scanf("%c",&sys);
 	
@@ -62,6 +62,7 @@ int main()
 				case 'D' : system("./files/rom/get_dot.sh"); break;
 				case 'E' : system("./files/rom/get_arrow.sh"); break;
 				case 'F' : system("./files/rom/get_crdroid.sh"); break;
+				case 'G' : system("./files/rom/get_havoc.sh"); break;
 				default : printf("暂不支持编译此rom!\n"); break;
 			}
 	
