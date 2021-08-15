@@ -20,6 +20,6 @@ case $vpn in
 		;;
 esac
 
-repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 echo "源码获取完成"

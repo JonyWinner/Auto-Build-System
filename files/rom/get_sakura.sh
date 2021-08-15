@@ -2,17 +2,16 @@
 set -o errexit
 source files/get_work.sh
 
-mkdir crd
-cd crd
+mkdir sakura
+cd sakura
 echo "开始获取源码咯，请确认你的网络畅通，需要科学上网"
 read -p "是否已经科学上网？(Y/N)" vpn
-
 case $vpn in
 	[yY])
 		echo "请继续"
 		;;
 	[nN])
-		echo "请连接VPN后再试!"
+		echo "请连接到VPN后再试!"
 		exit
 		;;
 	*)
@@ -21,7 +20,6 @@ case $vpn in
 		;;
 esac
 
-
-repo init -u git://github.com/crdroidandroid/android.git -b 11.0 --depth=1
+repo init --depth=1 -u git://github.com/ProjectSakura/android.git -b 11
 repo sync
 echo "源码获取完成"
