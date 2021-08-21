@@ -89,7 +89,7 @@ int main()
 			system("clear");
 			times();
 			printf("选择你要编译的rec:\n");
-			printf("A.twrp B.OrangeFox\n");
+			printf("A.twrp B.OrangeFox C.PBRP\n");
 			scanf("%c",&rec);
 
 			switch(rec)
