@@ -102,6 +102,10 @@ int main()
 					system("./files/rec/get_ofx.sh");
 					break;
 
+				case 'C':
+					system("./files/rec/get_pbrp.sh");
+					break;
+
 				default:
 					printf("暂不支持编译此rec!\n");
 					break;
