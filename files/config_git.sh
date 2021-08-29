@@ -1,10 +1,10 @@
 #!/bin/bash
 set -o errexit
 
-echo -n "输入你在github上的名字:"
+echo -n "Enter your github name:"
 read name
-echo -n "输入你注册github的邮箱:"
+echo -n "Enter your github email:"
 read email
 git config --global user.name "$name"
 git config --global user.email "$email"
-echo "配置完成!"
+echo "Config conplete!"

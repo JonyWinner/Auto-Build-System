@@ -1,4 +1,4 @@
-read -p "输入你想储存源码的位置(默认在/home/用户名下)(默认输入Y,反则输入N):" save
+read -p "Enter the path you want to save source(default in /home/username)(default enter:Y,other enter:N):" save
 
 case $save in
 	[yY])
@@ -6,12 +6,12 @@ case $save in
 		cd /home/$user
 		;;
 	[nN])
-		echo "输入位置："
+		echo "Enter your path："
 		read path
 		cd $path
 		;;
 	*)
-		echo "请输入一个路径！"
+		echo "Please enter a path！"
 		exit
 		;;
 	esac

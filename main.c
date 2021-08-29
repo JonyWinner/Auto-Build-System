@@ -8,15 +8,18 @@ int main()
 	char envi,sys,git,choose,rec;
 	times();
 	printf("**************************************\n");
-	printf("*    欢迎使用auto rom build system   *\n");
+	printf("*    Weicome to Auto build system    *\n");
 	printf("**************************************\n");
 	printf("\n");
 	printf("**************************************\n");
-	printf("*A.一键编译  B.安装编译环境 C.配置git*\n");
-	printf("*D.REC       E.退出                  *\n");
+	printf("*A.One key build       		     *\n");
+	printf("*B.Install environment               *\n");
+	printf("*C.Config git                        *\n");
+	printf("*D.Build Rec                         *\n");
+	printf("*E.Exit                              *\n");
 	printf("**************************************\n");
 
-	printf("请选择：\n");
+	printf("Please Choose：\n");
 	scanf("%c",&choose);
 	getchar();
 
@@ -25,19 +28,19 @@ int main()
 		case 'A':
 			system("clear");
 			times();
-			printf("你是否已经安装编译环境？(Y/N)\n");
+			printf("Have you installed environment？(Y/N)\n");
 			scanf("%c",&envi);
 			getchar();
 			if (envi == 'N')
 			{
-				system("./files/envi.sh"); //执行sh来安装环境
+				system("./files/envi.sh"); //run .sh to install environment
 			}
 			else
 			{
 				printf("OK!\n");
 			}
 			
-			printf("您是否已经配置好git?(Y/N)\n");
+			printf("Have you config git?(Y/N)\n");
 			scanf("%c",&git);
 			getchar();
 			if (git == 'N')
@@ -49,10 +52,10 @@ int main()
 				printf("OK!\n");
 			}
 			
-			printf("选择您要编译的系统：\n");
+			printf("Choose the system yoh want to build：\n");
 			printf("A.pe B.peplus C.evo D.dotOS E.Arrow F.Crdroid G.Havoc\n");
 			printf("H.Project Sakura I.ShapeShift \n");
-			printf("请选择：(输入序号)\n");
+			printf("Please choose:(enter number)\n");
 			scanf("%c",&sys);
 	
 			switch(sys)
@@ -66,11 +69,11 @@ int main()
 				case 'G' : system("./files/rom/get_havoc.sh"); break;
 				case 'H' : system("./files/rom/get_sakura.sh"); break;
 				case 'I' : system("./files/rom/get_ssos.sh"); break;
-				default : printf("暂不支持编译此rom!\n"); break;
+				default : printf("Not support!\n"); break;
 			}
 	
 			getchar();
-			printf("现在开始准备编译所需文件,接下来请按照程序提示来.\n");
+			printf("Getting config......\n");
 			system("./files/build.sh");
 			break;
 
@@ -89,7 +92,7 @@ int main()
 		case 'D':
 			system("clear");
 			times();
-			printf("选择你要编译的rec:\n");
+			printf("Choose the REC you want to build:\n");
 			printf("A.twrp B.OrangeFox C.PBRP\n");
 			scanf("%c",&rec);
 
@@ -108,7 +111,7 @@ int main()
 					break;
 
 				default:
-					printf("暂不支持编译此rec!\n");
+					printf("Not support!\n");
 					break;
 			}
 
@@ -128,6 +131,6 @@ void times(void)
 	char buf[1024];
 	time(&t);
 	ctime_r(&t,buf);
-	printf("当前时间：%s",buf);
+	printf("Time：%s",buf);
 	return 0;	
 }
